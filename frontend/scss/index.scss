@@ -1,0 +1,56 @@
+$back:#2a2a2a;
+$text:#e6e6e6;
+$navbar:#2a2a3a;
+*{
+    color:$text;
+}
+body{
+    background-color: $back;
+    min-height: 100vh;
+    margin:0;
+    padding:0rem 1rem;
+    border-color: #000000;
+    &::before, &::after{
+        content:' ';
+        position:fixed;
+        top:0;
+        z-index: 10000 !important;
+        min-height: 100%;
+        width:0.5rem;
+        box-shadow: white 0 0 0.5rem;
+    }
+    &::before{
+        left:-0.5rem;
+    }
+    &::after{
+        right:-0.5rem;
+    }
+
+}
+
+
+.navBar{
+    position:fixed;
+    top:0;left:0;
+    padding:0 0.5rem;
+    max-width: 100vw;
+    min-width: 100vw;
+    display:flex;
+    flex-direction: row;
+    justify-items: stretch;
+    align-items: stretch;
+    background-color: $navbar;
+    .logomid{flex-grow: 4;}
+    div{
+        text-align: center;
+        flex-grow:auto;
+        form{
+            max-width: 25rem;
+            button{
+                min-width: 10.625rem;
+                color:black;
+            }
+        }
+    }
+    
+}
