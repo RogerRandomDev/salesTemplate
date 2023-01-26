@@ -1,11 +1,11 @@
 const url = 'https://ubarter.onrender.com/';
 // const local = require('./useLocalStorageAuth');
-const { storeLocal, getLocal } = require('./useLocalStorageAuth');
+
 const buildHeader = (request, content) => {
   if (content == null) {
     return request;
   }
-  content.token = getLocal('token');
+  content.token = localStorage.getItem('token');
 
   Object.keys(content).forEach((key) =>
     request.setRequestHeader(key, content[key])
@@ -42,6 +42,6 @@ export const sendRequest = async (path, type, contents) => {
 };
 //updates the current token
 export const reloadToken = () => {
-  const token = getLocal('token');
+  const token = localStorage.getItem('token')
   sendRequest('token', 'POST', {});
 };
