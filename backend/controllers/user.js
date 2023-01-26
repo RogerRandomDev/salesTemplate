@@ -78,8 +78,7 @@ const updateUserFavorites = async (userID, favorites) => {
 const createUser = async (userData) => {
   userData = {
     email: userData.email,
-    password: userData.password,
-    username: userData.username
+    password: userData.password
   };
   
   var _id = null;
@@ -116,12 +115,11 @@ const deleteUser = async (req, res) => {
 };
 
 const buildUserData = (req) => {
-  const { email, password, username} =
+  const { email, password} =
     JSON.parse(req.body);
   return {
     email,
-    password,
-    username
+    password
   };
 };
 
