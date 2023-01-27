@@ -76,6 +76,10 @@ body{
     box-shadow: $text 0px 0px 0.25rem;
 }
 #loginForm{
+    position:absolute;
+    left:50%;
+    top:50vh;
+    transform: translate(-50%,-50%);
     background-color: $highlight;
     padding: 1.5rem 0.5rem 1rem 0.5rem;
     border-radius: 0.75rem;
@@ -86,14 +90,19 @@ body{
     display: flex;
     flex-wrap: nowrap;
     flex-direction: column;
-    max-width: max(35vw,25rem);
+    min-width: 20rem;
+    width:max(35vw,25rem);
+    min-height: max(15vw,25vh);
+    
     input{
-        flex-grow: 1;
+        
+        height: max(5vh,2rem);
         font-size: max(1.25rem,1.25vw);
         margin-bottom: 2rem;
+        color:black;
     }
-
     div{
+        margin-top: auto;
         flex-wrap: wrap;
         display: flex;
         width: 100%;
@@ -109,4 +118,22 @@ body{
         }
     }
     
+}
+
+
+.backgroundImage{
+    background-image: url("../images/back.jfif");
+    background-repeat: no-repeat;
+    background-size:cover;
+}
+
+.halfwidth{
+    max-width: max(50vw,50rem);
+    margin:0 auto;
+    background-color: $dim;
+    border-color: $navbar;
+    font-size: 1.5rem;
+    text-align: center;
+    border-style: solid;
+    border-width: 0.25rem;
 }
