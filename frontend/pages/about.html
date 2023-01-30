@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="../css/index.css">
-    <script src="../code/requests.js" type="text/javascript"></script>
 </head>
 <body class="backgroundImage">
     <!--navbar is a flex conatiner, change the flex-grow in the sass to alter where the left bar ends up and the sizings-->
@@ -24,22 +23,13 @@
     <br><br><br><br>
     <div>
         <h1 id="welcome">Lorem ipsum dolor sit, amet consectetur adipisicing.</h1>
-        <br>
-        <!--Login/logout input for the user to enter their email and password-->
-<div id="loginSignup">
-    <form id="loginForm" onsubmit="sendRequest('user/login','POST',{body:{
-        email:this.email,
-        password:this.password
-    }})">
-            <input type="text" placeholder="Email..." required title="email">
-            <input type="password" placeholder="Password..." required title="password">
-        <div>
-            <button type="submit">LOGIN</button>
-            <p></p>
-            <button>SIGNUP</button>
-        </div>
-    </form>
-</div>
+    </div>
+    <br><br>
+    <div>
+        <p class="halfwidth">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum accusamus fuga unde ullam nulla harum deserunt. Veniam odio officia a sunt adipisci suscipit, aliquid sequi quis architecto optio? Sapiente quaerat dignissimos, natus neque aliquid, voluptas voluptatum delectus voluptatem iusto placeat amet commodi eos omnis earum impedit eveniet nobis, officia nesciunt?
+        </p>
+
     </div>
 </body>
 </html>
