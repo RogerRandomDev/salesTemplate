@@ -1,4 +1,4 @@
-const url = 'https://localhost:5000/';
+const url = 'http://localhost:5000/';
 // const local = require('./useLocalStorageAuth');
 
 const buildHeader = (request, content) => {
@@ -24,7 +24,7 @@ const buildQuery = (query) => {
     )
   );
 };
-export const sendRequest = async (path, type, contents) => {
+const sendRequest = async (path, type, contents) => {
   // console.log(contents);
   return new Promise((resolve) => {
     var xml = new XMLHttpRequest();
@@ -41,7 +41,7 @@ export const sendRequest = async (path, type, contents) => {
   });
 };
 //updates the current token
-export const reloadToken = () => {
+const reloadToken = () => {
   const token = localStorage.getItem('token')
   sendRequest('token', 'POST', {});
 };

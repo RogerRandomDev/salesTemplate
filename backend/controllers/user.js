@@ -84,14 +84,18 @@ const createUser = async (userData) => {
   var _id = null;
   try {
     await connectDB(process.env.MONGO_URI);
-    if (await UserModel.findOne({ email: userData.email })) {
+    userData.password = await hashString(userData.password);
+
+    const newUser = new UserModel(userData);
+    await newUser.save();
+    /*if (await UserModel.findOne({ email: userData.email })) {
       return { success: false, msg: 'User already exists with email' };
     }
 
     userData.password = await hashString(userData.password);
 
     const newUser = new UserModel(userData);
-    await newUser.save();
+    await newUser.save();*/
     _id = newUser._id;
   } catch (err) {
     console.log(err);
@@ -131,3 +135,4 @@ module.exports = {
   buildUserData,
   deleteUser
 };
+

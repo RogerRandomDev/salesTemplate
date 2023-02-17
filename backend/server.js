@@ -31,6 +31,7 @@ app.post('/token', async (req, res) => {
 app.use('/user', userRouter);
 
 //these require authentication at the given time
+/*
 app.use('/', async (req, res, next) => {
   if (
     false &&
@@ -40,8 +41,7 @@ app.use('/', async (req, res, next) => {
   }
 
   next();
-});
-
+});*/
 
 const server = app.listen(process.env.PORT, () => {
   console.log(`server is running on port ${process.env.PORT}`);

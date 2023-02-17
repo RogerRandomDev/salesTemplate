@@ -27,12 +27,20 @@
         <br>
         <!--Login/logout input for the user to enter their email and password-->
 <div id="loginSignup">
-    <form id="loginForm" onsubmit="sendRequest('user/login','POST',{body:{
-        email:this.email,
-        password:this.password
-    }})">
-            <input type="text" placeholder="Email..." required title="email">
-            <input type="password" placeholder="Password..." required title="password">
+    <form id="loginForm" onsubmit="new Promise(async(resolve,reject)=>{
+        const response=JSON.parse(await sendRequest('user/login','POST',{body:{
+            email:this.email.value,
+        password:this.password.value
+    }}))
+    resolve(response)
+    
+}
+    ).then((response)=>{
+        console.log(response)
+        alert(response.msg)
+    });return false;">
+            <input type="text" placeholder="Email..." required title="email" id="email">
+            <input type="password" placeholder="Password..." required title="password" id="password">
         <div>
             <button type="submit">LOGIN</button>
             <p></p>

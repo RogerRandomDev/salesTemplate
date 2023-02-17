@@ -13,7 +13,6 @@ var tokens = {};
 const login = async (userData, checkUser) => {
   const { email, password } = userData;
   // console.log(`${email} is trying to login ..`);
-
   if (checkUser != null && compareHash(password, checkUser.password)) {
     var tokenData = jsonwebtoken.sign(
       { user: checkUser.email, userID: checkUser._id },
