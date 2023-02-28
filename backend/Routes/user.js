@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
-const {login,logout,updateToken,checkToken,} = require('../controllers/auth');
+const {sendConfirmationEmail,recieveConfirmationToken} = require("../middleware/accountConfirmation")
+const {login,logout,updateToken,checkToken} = require('../controllers/auth');
 const {getUser,getUserByID,createUser,buildUserData, getUsers,} = require('../controllers/user');
 const router=express.Router();
 
