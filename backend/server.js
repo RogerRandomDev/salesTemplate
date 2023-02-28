@@ -1,5 +1,5 @@
 
-
+//open index.html directly. if it was an actual website it would be set to automatically take you there
 const express = require('express');
 const { updateToken, checkToken } = require('./controllers/auth');
 const app = express();
@@ -45,6 +45,7 @@ app.use('/', async (req, res, next) => {
 
 const server = app.listen(process.env.PORT, () => {
   console.log(`server is running on port ${process.env.PORT}`);
+  console.log("open the index.html in frontend to test");
 });
 
 
